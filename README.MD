@@ -22,6 +22,9 @@ Description:
 
 I decided to use gnuplot to graph an instance of bench\_mark\_test to a box plot. 
 
+Graph: 
+
+![](https://github.com/nathanbarnesduncan/442-HW-2/blob/master/box_plot_benchmark.png)
 
 ##Part 3: Analysis:
 
