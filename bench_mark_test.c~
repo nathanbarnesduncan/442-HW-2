@@ -6,7 +6,7 @@
 #include <string.h>
 
 
-//Used to generate random lists of length "size" of int in range [0, "bound").
+
 int* generate_random_list(uint_fast32_t size, uint_fast32_t bound) {
 	int *list = calloc(size, sizeof(int));
 	for (uint_fast32_t i=0; i < size; i++) {
@@ -15,9 +15,7 @@ int* generate_random_list(uint_fast32_t size, uint_fast32_t bound) {
 	return list;
 }
 
-//Returns latency in ns of the average over number_of_iterations reads from buffer of "size" bytes
-//Uses a prestored random integer, a bit operation, and a fake condition to avoid compiler optimizations and prefetching (especially parallization)
-//though it was not elimentated completely. 
+
 double testing(uint_fast32_t size){
 	double nano_conversion_factor = 1000000000.;
 	uint_fast32_t number_of_iterations = 10000;
@@ -48,8 +46,6 @@ double testing(uint_fast32_t size){
 	return totaltime;
 }
 
-//main loop iterates testing on powers of two between min and max and prints result
-//the final printed string is a matrix with columns determining size of buffer
 int main(){
 	
 	

@@ -1,0 +1,17 @@
+set   autoscale                        # scale axes automatically
+unset label                            # remove any previous labels
+set ytic auto                          # set ytics automatically
+set style fill solid 0.25 border -1
+set style boxplot outliers pointtype 7
+set style data boxplot
+set term png
+set key off
+set output "box_plot_benchmark.png"
+set title "Benchmark Testing Problem 3"
+set ylabel "latency per memory read (ns)"
+set xlabel "buffer size (Bytes)"
+set xtics ('2^10' 1,  '2^11' 2, '2^12' 3, '2^13' 4, '2^14' 5, '2^15' 6, '2^16' 7, '2^17' 8, '2^18' 9, '2^19' 10, '2^20' 11, '2^21' 12, '2^22' 13, '2^23' 14, '2^24' 15, '2^25' 16, '2^26' 17)
+set xtics rotate by -90 
+set xtics offset 0, 0, 0
+plot for [i=1:17] 'data_from_.txt' using (i):i
+
